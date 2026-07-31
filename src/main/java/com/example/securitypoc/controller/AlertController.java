@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.*;
 import java.time.Instant;
 import java.util.List;
 import java.util.Map;
-
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 @RestController
 @RequestMapping("/api/alerts")
+@SecurityRequirement(name = "Bearer Authentication")
 public class AlertController {
     @GetMapping
     public List<Map<String, Object>> alerts(Authentication authentication) {
